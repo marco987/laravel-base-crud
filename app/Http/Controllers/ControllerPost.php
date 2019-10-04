@@ -26,7 +26,8 @@ class ControllerPost extends Controller
      */
     public function create()
     {
-        //
+
+      return view('createPost');
     }
 
     /**
@@ -37,7 +38,14 @@ class ControllerPost extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $datiVerificati = $request -> validate([
+        'title' => 'required',
+        'description' => 'required',
+        'author' => 'required'
+      ]);
+      $post = Post::create($datiVerificati);
+
+      return redirect('/indexPost');
     }
 
     /**

@@ -2,6 +2,8 @@
 
 @section('content')
 
+  <a href="{{Route('create.post')}}">CREA nuovo Post</a>
+
   @foreach ($posts as $post)
 
     <div class="box-post">
