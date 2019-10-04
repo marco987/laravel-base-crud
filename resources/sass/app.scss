@@ -38,3 +38,12 @@ main {
   border: solid 3px purple;
   border-radius: 10px;
 }
+
+.box-post > h3, .box-post > p {
+  margin: 10px 0;
+}
+
+span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
