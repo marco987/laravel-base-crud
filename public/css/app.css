@@ -53,5 +53,11 @@ a {
   font-weight: bold;
   text-decoration: none;
   color: purple;
+  display: block;
+  margin: 10px 0;
+  padding: 5px;
+  border: solid purple 1px;
+  border-radius: 5px;
+  text-align: center;
 }
 

@@ -43,7 +43,7 @@ class ControllerPost extends Controller
         'description' => 'required',
         'author' => 'required'
       ]);
-      $post = Post::create($datiVerificati);
+      Post::create($datiVerificati);
 
       return redirect('/indexPost');
     }
@@ -67,7 +67,9 @@ class ControllerPost extends Controller
      */
     public function edit($id)
     {
-        //
+      $post = Post::findOrFail($id);
+
+      return view('editPost', compact('post'));
     }
 
     /**
@@ -79,7 +81,14 @@ class ControllerPost extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $datiVerificati = $request -> validate([
+        'title' => 'required',
+        'description' => 'required',
+        'author' => 'required'
+      ]);
+      Post::whereId($id) -> update($datiVerificati);
+
+      return redirect('/indexPost');
     }
 
     /**
